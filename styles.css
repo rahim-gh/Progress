@@ -3,31 +3,37 @@
     src: url('/Assets/Fonts/QuacheBoldExExp.ttf');
 }
 
-.header_logo a {
-    font-family: 'Quache';
-    font-weight: bold;
-    font-size: 1.5em;
-    margin: 0;
-    text-decoration: none;
-    color: black;
-}
+@media screen and (max-width: 600px) {}
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.0;
-    color: #333;
-    background-color: #ffffff;
     min-height: 100vh;
-    min-width: 100vh;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
     align-items: center;
     padding: 20px;
-    background-color: white;
-    /* border-bottom: 1px solid #75a492; */
+}
+
+.logo a {
+    font-family: 'Quache';
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+.navigation {
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 nav ul {
@@ -43,12 +49,8 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: black;
 }
 
-nav a:hover {
-    color: #75a492;
-}
 
 main {
     display: flex;
@@ -66,7 +68,7 @@ table {
 th,
 td {
     padding: 1em;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid;
     font-size: 0.8em;
 }
 
@@ -84,18 +86,7 @@ th.desc::after {
 }
 
 .table_header {
-    background-color: #75a492;
-    color: white;
-}
-
-.table_content {
-    background-color: white;
-    color: black
-}
-
-.table_content:hover {
-    color: white;
-    background-color: #75a492;
+    color: black;
 }
 
 .footer {
@@ -106,9 +97,103 @@ th.desc::after {
 }
 
 footer {
-    background-color: white;
-    color: black;
     height: 50px;
     text-align: center;
     margin-top: auto;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: white;
+        background-color: black;
+    }
+
+    header {
+        background-color: black;
+    }
+
+    nav a {
+        color: white;
+    }
+
+    nav a:hover {
+        color: #75d4b3;
+    }
+
+    footer {
+        background-color: black;
+        color: white;
+    }
+
+    th,
+    td {
+        border-bottom: black;
+    }
+
+    .logo a {
+        color: white;
+    }
+
+    .table_header {
+        background-color: #75d4b3;
+    }
+
+    .table_content {
+        background-color: black;
+        color: white;
+    }
+
+    .table_content:hover {
+        color: black;
+        background-color: #75d4b3;
+    }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        color: black;
+        background-color: white;
+    }
+
+    header {
+        background-color: white;
+    }
+
+    nav a {
+        color: black;
+    }
+
+    nav a:hover {
+        color: #75a492;
+    }
+
+    footer {
+        background-color: white;
+        color: black;
+    }
+
+    th,
+    td {
+        border-bottom: white;
+    }
+
+    .logo a {
+        color: black;
+    }
+
+    .table_header {
+        background-color: #75a492;
+    }
+
+    .table_content {
+        background-color: white;
+        color: black;
+    }
+
+    .table_content:hover {
+        color: black;
+        background-color: #75a492;
+    }
 }
