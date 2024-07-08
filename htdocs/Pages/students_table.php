@@ -40,7 +40,7 @@
             </thead>
             <tbody>
                 <?php
-                    include '../Control/list_students.php';
+                    include '/Control/list_students.php';
                 ?>
             </tbody>
         </table>

@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '/Control/db.php';
 
 $query = "SELECT * FROM students_db";
 $result = mysqli_query($con, $query);
