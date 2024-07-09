@@ -9,49 +9,87 @@
 </head>
 
 <body>
+
+
   <?php
-  require '../Control/db.php';
+  include 'auth.php';
 
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $action = $_POST["action"];
 
-  if (strlen($password) < 8) {
-    $error = "Password must be at least 8 characters long";
-    header('Location: login.html?error=' . urlencode($error));
-    exit;
-  }
+    if ($action == "login") {
+      $email = $_POST["email"];
+      $password = $_POST["password"];
 
-  // Prepare the SQL query
-  $sql = "SELECT password FROM users WHERE email = ?";
-  $stmt = mysqli_prepare($con, $sql);
-  mysqli_stmt_bind_param($stmt, "s", $email);
-  mysqli_stmt_execute($stmt);
-  $result = mysqli_stmt_get_result($stmt);
+      if (login($email, $password, $conn)) {
+        echo "Login successful!\n";
+      } else {
+        echo "Login failed.\n";
+      }
+    } elseif ($action == "register") {
+      $name = $_POST["name"];
+      $familyname = $_POST["familyname"];
+      $email = $_POST["email"];
+      $password = $_POST["password"];
+      $check_password = $_POST["check_password"];
 
-  if ($row = mysqli_fetch_assoc($result)) {
-    $hashedPassword = $row['password'];
-    if (password_verify($password, $hashedPassword)) {
-      $_SESSION['loggedin'] = true;
-      header('Location: ../index.html');
-      exit;
-    } else {
-      $error = "Wrong password";
+      if (register($name, $familyname, $email, $password, $check_password, $conn)) {
+        echo "Registration successful!\n";
+      } else {
+        echo "Registration failed.\n";
+      }
+    } elseif ($action == "logout") {
+      if (logout()) {
+        echo "Logout successful!\n";
+      } else {
+        echo "Logout failed.\n";
+      }
     }
-  } else {
-    header('Location: login.html?error=No User Found.');
-    exit;
   }
-
   ?>
 
 
-  <form method="get">
-    <label for="email">Email:</label>
-    <input type="text" name="email" required><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" required><br>
-    <input type="submit" value="Register">
+  <h1>Login</h1>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <input type="hidden" name="action" value="login">
+
+    <label>Email</label><br>
+    <input type="email" name="email"><br>
+
+    <label>Password</label><br>
+    <input type="password" name="password"><br>
+
+    <input type="submit" name="submit" value="Login">
   </form>
+
+  <h1>Register</h1>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <input type="hidden" name="action" value="register">
+
+    <label>Name</label><br>
+    <input type="text" name="name"><br>
+
+    <label>Familyame</label><br>
+    <input type="text" name="familyname"><br>
+
+    <label>Email</label><br>
+    <input type="email" name="email"><br>
+
+    <label>Password</label><br>
+    <input type="password" name="password"><br>
+
+    <label>Retype the Password</label><br>
+    <input type="password" name="check_password"><br>
+
+    <input type="submit" name="submit" value="Register">
+  </form>
+
+  <h1>Logout</h1>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <input type="hidden" name="action" value="logout">
+    <input type="submit" name="submit" value="Logout">
+  </form>
+
 </body>
 
 </html>
