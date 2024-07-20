@@ -1,204 +1,199 @@
 @font-face {
-  font-family: "Quache";
-  src: url("/Assets/Fonts/QuacheBoldExExp.ttf");
+    font-family: "Quache";
+    src: url("/Assets/Fonts/QuacheBoldExExp.ttf");
 }
 
 @media screen and (max-width: 600px) {
 } /*TODO: fix this!*/
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1;
-  min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    min-height: 100vh;
 }
 
 header {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  align-items: center;
-  padding: 20px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 20px;
 }
 
 .logo a {
-  font-family: "Quache";
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-right: 50px;
-  text-decoration: none;
+    font-family: "Quache";
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 50px;
+    text-decoration: none;
 }
 
 .navigation {
-  color: black;
+    color: black;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 nav a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-/**/
- 
-
-/**/
-
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
 }
 
 table {
-  text-align: center;
-  width: 100%;
-  border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th,
 td {
-  padding: 1em;
-  border-bottom: 1px solid;
-  font-size: 0.8em;
+    padding: 1em;
+    border-bottom: 1px solid;
+    font-size: 0.8em;
 }
 
 th {
-  font-size: 0.9em;
-  cursor: pointer;
+    font-size: 0.9em;
+    cursor: pointer;
 }
 
 th.asc::after {
-  content: " ↑";
+    content: " ↑";
 }
 
 th.desc::after {
-  content: " ↓";
+    content: " ↓";
 }
 
 .table_header {
-  color: black;
+    color: black;
 }
 
 .footer {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 0vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0vh;
 }
 
 footer {
-  height: 50px;
-  text-align: center;
-  margin-top: auto;
+    height: 50px;
+    text-align: center;
+    margin-top: auto;
 }
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: black;
-  }
+    body {
+        color: white;
+        background-color: black;
+    }
 
-  header {
-    background-color: black;
-  }
+    header {
+        background-color: black;
+    }
 
-  nav a {
-    color: white;
-  }
+    nav a {
+        color: white;
+    }
 
-  nav a:hover {
-    color: #75d4b3;
-  }
+    nav a:hover {
+        color: #75d4b3;
+    }
 
-  footer {
-    background-color: black;
-    color: white;
-  }
+    footer {
+        background-color: black;
+        color: white;
+    }
 
-  th,
-  td {
-    border-bottom: black;
-  }
+    th,
+    td {
+        border-bottom: black;
+    }
 
-  .logo a {
-    color: white;
-  }
+    .logo a {
+        color: white;
+    }
 
-  .table_header {
-    background-color: #75d4b3;
-  }
+    .table_header {
+        background-color: #75d4b3;
+    }
 
-  .table_content {
-    background-color: black;
-    color: white;
-  }
+    .table_content {
+        background-color: black;
+        color: white;
+    }
 
-  .table_content:hover {
-    color: black;
-    background-color: #75d4b3;
-  }
+    .table_content:hover {
+        color: black;
+        background-color: #75d4b3;
+    }
 }
 
 /* Light theme */
 @media (prefers-color-scheme: light) {
-  body {
-    color: black;
-    background-color: white;
-  }
+    body {
+        color: black;
+        background-color: white;
+    }
 
-  header {
-    background-color: white;
-  }
+    header {
+        background-color: white;
+    }
 
-  nav a {
-    color: black;
-  }
+    nav a {
+        color: black;
+    }
 
-  nav a:hover {
-    color: #75a492;
-  }
+    nav a:hover {
+        color: #75a492;
+    }
 
-  footer {
-    background-color: white;
-    color: black;
-  }
+    footer {
+        background-color: white;
+        color: black;
+    }
 
-  th,
-  td {
-    border-bottom: white;
-  }
+    th,
+    td {
+        border-bottom: white;
+    }
 
-  .logo a {
-    color: black;
-  }
+    .logo a {
+        color: black;
+    }
 
-  .table_header {
-    background-color: #75a492;
-  }
+    .table_header {
+        background-color: #75a492;
+    }
 
-  .table_content {
-    background-color: white;
-    color: black;
-  }
+    .table_content {
+        background-color: white;
+        color: black;
+    }
 
-  .table_content:hover {
-    color: black;
-    background-color: #75a492;
-  }
+    .table_content:hover {
+        color: black;
+        background-color: #75a492;
+    }
 }

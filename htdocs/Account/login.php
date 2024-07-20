@@ -12,7 +12,7 @@
 
 
   <?php
-  include 'auth.php';
+  include "auth.php";
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $action = $_POST["action"];
@@ -33,7 +33,16 @@
       $password = $_POST["password"];
       $check_password = $_POST["check_password"];
 
-      if (register($name, $familyname, $email, $password, $check_password, $conn)) {
+      if (
+        register(
+          $name,
+          $familyname,
+          $email,
+          $password,
+          $check_password,
+          $conn
+        )
+      ) {
         echo "Registration successful!\n";
       } else {
         echo "Registration failed.\n";
@@ -89,6 +98,8 @@
     <input type="hidden" name="action" value="logout">
     <input type="submit" name="submit" value="Logout">
   </form>
+
+
 
 </body>
 
