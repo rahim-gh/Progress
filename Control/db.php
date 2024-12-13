@@ -1,6 +1,7 @@
 <?php
 // Database connection details
-$servername = "progress.dvl.to";
+//$servername = "progress.dvl.to";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $database = "Progress";

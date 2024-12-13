@@ -1,8 +1,8 @@
 <?php
-require '/Control/db.php';
+require '../Control/db.php';
 
 $query = "SELECT * FROM students_db";
-$result = mysqli_query($con, $query);
+$result = mysqli_query($conn, $query);
 
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr class='table_content'>";
